@@ -1,0 +1,61 @@
+@import url('https://fonts.cdnfonts.com/css/freemono');
+
+@keyframes fadein {
+    0% {
+        opacity: 0%;
+        transform: translateY(20%);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+}
+
+body, .collapsible {
+    background-color: #000;
+    color: #fff;
+    font-family: 'FreeMono';
+    animation-name: fadein;
+    animation-duration: 1s;
+}
+
+th {
+    text-align: left;
+}
+
+.var {
+    color: #8ff;
+    font-weight: bold;
+}
+
+.collapsible {
+    background-color: #444 !important;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible-active, .collapsible:hover {
+    background-color: #888 !important;
+}
+
+.collapsible-content {
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: #666;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+a {
+    color: #0ff;
+}
+
+a:hover, a:active {
+    color: #0f0;
+}
