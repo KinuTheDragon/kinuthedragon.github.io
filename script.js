@@ -1,16 +1,18 @@
-let coll = document.getElementsByClassName("collapsible");
+function updateCollapsible(collapsibleButton) {
+    let opened = collapsibleButton.classList.contains("collapsible-active");
+    let content = collapsibleButton.nextElementSibling;
+    if (opened) {
+        content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+        content.style.maxHeight = null;
+    }
+    collapsibleButton.innerHTML = collapsibleButton.getAttribute(opened ? "open-text" : "closed-text");
+}
 
-for (let i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
+for (let btn of document.getElementsByClassName("collapsible")) {
+    updateCollapsible(btn);
+    btn.addEventListener("click", function () {
         this.classList.toggle("collapsible-active");
-        let content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
-        let oldText = this.innerHTML;
-        this.innerHTML = this.getAttribute("switch-text");
-        this.setAttribute("switch-text", oldText);
+        updateCollapsible(this);
     });
 }

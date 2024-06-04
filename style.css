@@ -19,15 +19,6 @@ body, .collapsible {
     animation-duration: 1s;
 }
 
-th {
-    text-align: left;
-}
-
-.var {
-    color: #8ff;
-    font-weight: bold;
-}
-
 .collapsible {
     background-color: #444 !important;
     cursor: pointer;
